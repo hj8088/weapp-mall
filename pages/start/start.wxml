@@ -1,0 +1,12 @@
+<!--pages/start/start.wxml-->
+
+<swiper class="swiper_box" bindchange="swiperChange" indicator-dots="true" indicator-active-color="#fff">
+  <swiper-item wx:for="{{banners}}" wx:key="id">
+    <van-image width="100vw" height="100vh" fit="cover" bind:click="imgClick" src="{{item.pic_url}}" />
+  </swiper-item>
+</swiper>
+<van-toast id="van-toast" />
+
+<view class="btn">
+  <van-button wx:if="{{swiperCurrent + 1 == swiperMaxNumber}}" type="primary" size="small" bind:click="goToIndex">进入店铺</van-button>
+</view>
