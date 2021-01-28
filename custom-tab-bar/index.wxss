@@ -1,0 +1,5 @@
+.tab-bar{
+  height: 48px;
+  display: flex;
+  padding-bottom: env(safe-area-inset-bottom);
+}

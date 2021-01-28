@@ -1,0 +1,15 @@
+<van-tabbar class="tab-bar" active="{{active}}" bind:change="onChange">
+<van-tabbar-item wx:for="{{list}}" wx:key="index" width="27px" height="27px">
+  <image
+      slot="icon"
+      src="{{ item.iconPath }}"
+      mode="aspectFit"
+    />
+    <image
+      slot="icon-active"
+      src="{{ item.selectedIconPath }}"
+      mode="aspectFit"
+    />
+   {{item.text}}
+</van-tabbar-item>
+</van-tabbar>

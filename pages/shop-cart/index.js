@@ -1,54 +1,17 @@
-// pages/start/start.js
-
-const WXAPI = require('apifm-wxapi')
-import Toast from '@vant/weapp/toast/toast'
-
-const app = getApp()
+// pages/shop-cart/index.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    banners: [],
-    swiperMaxNumber: 0,
-    swiperCurrent: 0
-  },
 
-  goToIndex: function(e){
-    console.log('goToIndex')
-    wx.switchTab({
-      url: '/pages/index/index',
-    })
-  },
-
-  imgClick: function(e) {
-    if(this.data.swiperCurrent != this.data.swiperMaxNumber - 1){
-      Toast('左滑进入');
-    }
-  },
-
-  swiperChange: function(e){
-    this.setData({
-      swiperCurrent: e.detail.current
-    })
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    const _this = this
-    WXAPI.banners({
-      type: 'app'
-    }).then(function (res){
-      if(res.code == 0){
-        _this.setData({
-          banners: res.data,
-          swiperMaxNumber: res.data.length
-        })
-      }
-    })
 
   },
 
